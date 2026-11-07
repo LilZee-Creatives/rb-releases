@@ -1,0 +1,98 @@
+{
+  "repo": "LilZee-Creatives/rb-releases",
+  "updated": "2026-11-07T13:01:38.435Z",
+  "releases": [
+    {
+      "tag": "v1.0.1",
+      "name": "Ribbon 1.0.1",
+      "date": "2026-11-02T17:05:24Z",
+      "body": "### New\n- Word alternatives on right-click\n\n### Fixed\n- Payment link",
+      "url": "https://github.com/LilZee-Creatives/rb-releases/releases/tag/v1.0.1",
+      "prerelease": false,
+      "assets": [
+        {
+          "name": "Ribbon_1.0.1_aarch64.dmg",
+          "url": "https://github.com/LilZee-Creatives/rb-releases/releases/download/v1.0.1/Ribbon_1.0.1_aarch64.dmg",
+          "size": 9708681,
+          "downloads": 2
+        },
+        {
+          "name": "Ribbon_1.0.1_x64-setup.exe",
+          "url": "https://github.com/LilZee-Creatives/rb-releases/releases/download/v1.0.1/Ribbon_1.0.1_x64-setup.exe",
+          "size": 6551480,
+          "downloads": 1
+        },
+        {
+          "name": "Ribbon_1.0.1_x64.dmg",
+          "url": "https://github.com/LilZee-Creatives/rb-releases/releases/download/v1.0.1/Ribbon_1.0.1_x64.dmg",
+          "size": 9425633,
+          "downloads": 1
+        },
+        {
+          "name": "Ribbon_1.0.1_x64_en-US.msi",
+          "url": "https://github.com/LilZee-Creatives/rb-releases/releases/download/v1.0.1/Ribbon_1.0.1_x64_en-US.msi",
+          "size": 8495104,
+          "downloads": 1
+        },
+        {
+          "name": "Ribbon_aarch64.app.tar.gz",
+          "url": "https://github.com/LilZee-Creatives/rb-releases/releases/download/v1.0.1/Ribbon_aarch64.app.tar.gz",
+          "size": 9604314,
+          "downloads": 1
+        },
+        {
+          "name": "Ribbon_x64.app.tar.gz",
+          "url": "https://github.com/LilZee-Creatives/rb-releases/releases/download/v1.0.1/Ribbon_x64.app.tar.gz",
+          "size": 9333180,
+          "downloads": 1
+        }
+      ]
+    },
+    {
+      "tag": "v1.0.0",
+      "name": "Ribbon 1.0.0",
+      "date": "2026-11-02T12:29:20Z",
+      "body": "The first release of Ribbon.\n\n### New\n- **Polish on Enter**: spelling, typos, punctuation and wrong words (ill → I'll) fixed as you finish each paragraph\n- **Alternate lines** in the margin, with OK and Skip\n- **AI score** that keeps track of how much of the book is yours\n- **Word alternatives**: double-click or right-click any word\n- **Local AI**: one-click model downloads, or bring any `.gguf` file\n- Manuscript-format **PDF** and plain-text export\n- Bold, italic, underline, chapter headings and scene breaks\n",
+      "url": "https://github.com/LilZee-Creatives/rb-releases/releases/tag/v1.0.0",
+      "prerelease": false,
+      "assets": [
+        {
+          "name": "Ribbon_1.0.0_aarch64.dmg",
+          "url": "https://github.com/LilZee-Creatives/rb-releases/releases/download/v1.0.0/Ribbon_1.0.0_aarch64.dmg",
+          "size": 9708330,
+          "downloads": 2
+        },
+        {
+          "name": "Ribbon_1.0.0_x64-setup.exe",
+          "url": "https://github.com/LilZee-Creatives/rb-releases/releases/download/v1.0.0/Ribbon_1.0.0_x64-setup.exe",
+          "size": 6546383,
+          "downloads": 1
+        },
+        {
+          "name": "Ribbon_1.0.0_x64.dmg",
+          "url": "https://github.com/LilZee-Creatives/rb-releases/releases/download/v1.0.0/Ribbon_1.0.0_x64.dmg",
+          "size": 9425425,
+          "downloads": 1
+        },
+        {
+          "name": "Ribbon_1.0.0_x64_en-US.msi",
+          "url": "https://github.com/LilZee-Creatives/rb-releases/releases/download/v1.0.0/Ribbon_1.0.0_x64_en-US.msi",
+          "size": 8495104,
+          "downloads": 1
+        },
+        {
+          "name": "Ribbon_aarch64.app.tar.gz",
+          "url": "https://github.com/LilZee-Creatives/rb-releases/releases/download/v1.0.0/Ribbon_aarch64.app.tar.gz",
+          "size": 9603895,
+          "downloads": 1
+        },
+        {
+          "name": "Ribbon_x64.app.tar.gz",
+          "url": "https://github.com/LilZee-Creatives/rb-releases/releases/download/v1.0.0/Ribbon_x64.app.tar.gz",
+          "size": 9332785,
+          "downloads": 1
+        }
+      ]
+    }
+  ]
+}

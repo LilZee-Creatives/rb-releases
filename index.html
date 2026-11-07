@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ribbon — a typewriter editor for novelists</title>
+  <meta name="description" content="Ribbon is a quiet typewriter editor for writing novels. Press Enter and it fixes typos, punctuation and wrong words. Alternate lines, an AI score that keeps the book yours, and local AI that never leaves your computer. Mac and Windows.">
+  <meta property="og:title" content="Ribbon — a typewriter editor for novelists">
+  <meta property="og:description" content="Write the book. Ribbon fixes the typing. For Mac and Windows.">
+  <meta property="og:image" content="assets/og.png">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="shared/thesaurus.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-row">
+    <a class="brand" href="./"><img src="assets/icon.png" alt="" width="28" height="28">Ribbon</a>
+    <nav class="nav" aria-label="Site">
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="releases.html">Release log</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-ink btn-sm" id="topDownload" href="#download">Download</a>
+  </div>
+</header>
+
+<main>
+  <!-- Hero: the working tutorial is the centrepiece -->
+  <section class="hero">
+    <div class="wrap hero-copy">
+      <h1>Write the book.<br class="br-sm"> <span class="ink">Ribbon fixes the typing.</span></h1>
+      <p class="lede">A quiet typewriter editor for novelists. Press Enter and a ribbon of ink runs through your paragraph, fixing typos, punctuation and wrong words. Everything stays on your computer.</p>
+    </div>
+
+    <div class="wrap dl" id="download">
+      <div class="dl-row">
+        <a class="btn btn-ink btn-lg dl-btn" id="dlMac" href="releases.html" data-os="mac">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.3.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.8-1.1-2.8-4.1zM14 5.1c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg>
+          <span><b>Download for Mac</b><small id="dlMacSub">Apple Silicon · macOS 11+</small></span>
+        </a>
+        <a class="btn btn-ink btn-lg dl-btn" id="dlWin" href="releases.html" data-os="windows">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M2 4.3 10 3.2v7.7H2zM11 3.1 22 1.5v9.4H11zM2 12h8v7.8l-8-1.1zM11 12h11v9.5l-11-1.6z"/></svg>
+          <span><b>Download for Windows</b><small id="dlWinSub">Windows 10 and 11 · 64-bit</small></span>
+        </a>
+      </div>
+      <p class="dl-meta">
+        <span id="dlVersion">Free to try · 3 pages included</span>
+        <span class="sep">·</span>
+        <a href="#" id="dlIntel" data-os="mac-intel">Intel Mac?</a>
+        <span class="sep">·</span>
+        <a href="releases.html">All versions</a>
+      </p>
+    </div>
+
+    <div class="wrap stage-wrap">
+      <div class="stage" id="stage">
+        <div class="tryme" id="tryme" aria-hidden="true">
+          <span class="tryme-label">try me</span>
+          <svg class="tryme-arrow" viewBox="0 0 150 120" width="150" height="120">
+            <defs>
+              <linearGradient id="ribbonGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="var(--wave-a)"/>
+                <stop offset="1" stop-color="var(--wave-b)"/>
+              </linearGradient>
+            </defs>
+            <path d="M14 18 C 60 4, 112 22, 104 56 C 98 82, 70 76, 78 60 C 86 44, 118 58, 126 96"
+                  fill="none" stroke="url(#ribbonGrad)" stroke-width="7" stroke-linecap="round"/>
+            <path d="M112 90 L127 104 L136 84" fill="none" stroke="var(--wave-b)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="win" id="demo" aria-label="Interactive Ribbon demo">
+          <div class="win-bar">
+            <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="win-title">The Lighthouse — Ribbon</span>
+            <span class="d-score" id="dScore" data-state="good">AI <b>10.0</b><small>/10</small></span>
+          </div>
+          <div class="win-body">
+            <div class="win-page" id="desk">
+              <div class="d-chapter">Chapter One</div>
+              <div id="editor" contenteditable="true" spellcheck="false" role="textbox" aria-multiline="true" aria-label="Demo page — type here"></div>
+            </div>
+            <aside class="win-margin" aria-label="Alternate lines">
+              <div class="d-label">Alternate lines</div>
+              <div class="d-cards" id="dCards"></div>
+            </aside>
+          </div>
+          <div class="d-pointer" id="dPointer" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24"><path d="M4 2 L4 20 L9 15 L12.5 22 L15.5 20.6 L12 13.8 L19 13.8 Z" fill="var(--ink)" stroke="var(--paper)" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="d-key" id="dKey" aria-hidden="true">Enter ⏎</div>
+          <div class="d-toast" id="dToast" role="status" aria-live="polite"></div>
+        </div>
+
+        <div class="caption" id="caption" aria-live="polite">
+          <span class="cap-step" id="capStep">1 / 4</span>
+          <span class="cap-text" id="capText">Write. Don’t stop for typos.</span>
+          <button class="cap-btn" id="capReplay" type="button">Replay</button>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Features -->
+  <section class="sec" id="features">
+    <div class="wrap">
+      <h2>What Ribbon does</h2>
+      <p class="sec-lede">Eight things, each one quiet. You write; Ribbon tidies up behind you.</p>
+      <div class="feats">
+        <article class="feat">
+          <h3>Polish on Enter</h3>
+          <p>Finish a paragraph and press Enter. A wave runs through it and fixes spelling, typos, punctuation and wrong words. Names stay exactly as you wrote them, and Undo puts everything back.</p>
+          <div class="eg"><s>ill go up teh stairs</s><span class="to">→</span><span>I’ll go up the stairs.</span></div>
+        </article>
+        <article class="feat">
+          <h3>Alternate lines</h3>
+          <p>Sometimes Ribbon thinks a sentence could be stronger. It leaves a suggestion in the margin. OK swaps it in. Skip keeps yours.</p>
+          <div class="eg"><s>She was very tired</s><span class="to">→</span><span>She was exhausted</span></div>
+        </article>
+        <article class="feat">
+          <h3>AI score</h3>
+          <p>Starts at 10 out of 10. Every suggested line you accept lowers it a little. Stay at 8 or above and the book is still yours. Typo fixes don’t count.</p>
+          <div class="eg eg-meter"><span class="m"><i style="width:86%"></i><em></em></span><b>8.6</b><small>healthy</small></div>
+        </article>
+        <article class="feat">
+          <h3>Word alternatives</h3>
+          <p>Double-click or right-click any word to see other words for it. Click one to swap it in. It even keeps the tense: walked becomes strolled.</p>
+          <div class="eg"><span class="w">walked</span><span class="to">→</span><span>marched · paced · strolled</span></div>
+        </article>
+        <article class="feat">
+          <h3>Your own AI, on your computer</h3>
+          <p>Pick a model the way you pick a photo: one click to download, or choose any model file you already have. Nothing you write is sent anywhere. With no model at all, the built-in rules still do the fixing.</p>
+          <div class="eg"><span class="tag">Qwen 2.5 · 1.5B</span><span class="tag">Llama 3.2 · 3B</span><span class="tag">your .gguf</span></div>
+        </article>
+        <article class="feat">
+          <h3>Manuscript-ready export</h3>
+          <p>Export a PDF in standard manuscript format, the way agents and editors expect it: Courier 12 pt, double-spaced, one-inch margins, title and page numbers. Or export plain text.</p>
+          <div class="eg"><span class="tag">PDF · Letter or A4</span><span class="tag">.txt</span></div>
+        </article>
+        <article class="feat">
+          <h3>Just enough formatting</h3>
+          <p>Bold, italic, underline, chapter headings, centred lines and scene breaks. Nothing else to fiddle with.</p>
+          <div class="eg"><b>B</b> <i>I</i> <u>U</u> <span class="tag">Chapter</span> <span class="tag">* * *</span></div>
+        </article>
+        <article class="feat">
+          <h3>Offline, no account</h3>
+          <p>No sign-up, no subscription, no cloud. Ribbon saves to files on your computer and keeps a draft safe as you type.</p>
+          <div class="eg"><span class="tag">.ribbon files</span><span class="tag">autosave</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="sec sec-alt" id="pricing">
+    <div class="wrap">
+      <h2>Pricing</h2>
+      <p class="sec-lede">Try every feature for free. Pay once when you need more pages.</p>
+      <div class="plans">
+        <div class="plan">
+          <div class="plan-name">Free</div>
+          <div class="plan-price">$0</div>
+          <ul>
+            <li>Every feature</li>
+            <li>Up to 3 pages (750 words)</li>
+            <li>No account needed</li>
+          </ul>
+          <a class="btn btn-line" href="#download">Download</a>
+        </div>
+        <div class="plan plan-pro">
+          <div class="plan-name">Full access</div>
+          <div class="plan-price"><span class="price" data-price>$10</span> <small>once</small></div>
+          <ul>
+            <li><b>All features unlocked</b></li>
+            <li>Unlimited pages</li>
+            <li>Free updates</li>
+            <li>Use it on up to 2 computers</li>
+          </ul>
+          <a class="btn btn-ink" id="buyBtn" href="#" data-track="buy">Buy now · <span data-price>$10</span></a>
+          <p class="plan-note">Secure checkout by Dodo Payments.</p>
+        </div>
+      </div>
+      <ol class="how">
+        <li><b>Pay</b> once with card or local payment methods.</li>
+        <li><b>Get your key</b> by email right away.</li>
+        <li><b>Paste it</b> in Ribbon: File → Unlock full access.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec" id="faq">
+    <div class="wrap narrow">
+      <h2>Questions</h2>
+      <details><summary>Does my writing go to the cloud?</summary><p>No. Ribbon runs the AI model on your own computer. The only time Ribbon goes online is to download a model you choose, or to check your license key once.</p></details>
+      <details><summary>Do I need a powerful computer?</summary><p>No. The built-in rules work on anything. The small one-click model runs well on a laptop with 8 GB of memory; the larger one likes 16 GB.</p></details>
+      <details><summary>What happens after 3 pages on the free version?</summary><p>You can still read, edit and export those pages. To keep writing, unlock full access once for <span data-price>$10</span>.</p></details>
+      <details><summary>Can I move to a new computer?</summary><p>Yes. In Ribbon, open File → License → Release this computer, then paste your key on the new one. One key works on up to 3 computers.</p></details>
+      <details><summary>Mac says the app can’t be opened.</summary><p>Right-click Ribbon in Applications and choose Open, then confirm. You only need to do this once.</p></details>
+    </div>
+  </section>
+
+  <!-- Latest release teaser -->
+  <section class="sec sec-alt" id="latest">
+    <div class="wrap">
+      <div class="latest">
+        <div>
+          <div class="eyebrow">Latest release</div>
+          <div class="latest-title" id="latestTitle">Ribbon 1.0.0</div>
+          <div class="latest-date" id="latestDate"></div>
+        </div>
+        <ul class="latest-notes" id="latestNotes"></ul>
+        <a class="btn btn-line" href="releases.html">Read the release log →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="sec" id="contact">
+    <div class="wrap narrow">
+      <h2>Contact us</h2>
+      <p class="sec-lede">Questions, a lost key, or an idea for Ribbon. We answer every message.</p>
+      <form class="contact" id="contactForm" novalidate>
+        <div class="row2">
+          <label for="cName">Your name<input id="cName" name="name" autocomplete="name" required></label>
+          <label for="cEmail">Your email<input id="cEmail" name="email" type="email" autocomplete="email" required></label>
+        </div>
+        <label for="cTopic">Topic
+          <select id="cTopic" name="topic">
+            <option>Question</option><option>License or purchase</option><option>Bug report</option><option>Feature idea</option>
+          </select>
+        </label>
+        <label for="cMsg">Message<textarea id="cMsg" name="message" rows="5" required></textarea></label>
+        <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="contact-foot">
+          <button class="btn btn-ink" type="submit" id="cSend">Send message</button>
+          <p class="cmsg" id="cStatus" role="status"></p>
+        </div>
+        <p class="cmail">Or email <span class="mail" id="mailText"></span> <button type="button" class="copy" id="copyMail">Copy</button></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-row">
+    <span>© <span id="year">2026</span> Ribbon · Made by Mustaq</span>
+    <span class="foot-links"><a href="releases.html">Release log</a><a href="#contact">Contact</a><a href="#pricing">Pricing</a></span>
+    <span class="foot-small">Anonymous, cookie-free visit counts. No tracking of what you write — ever.</span>
+  </div>
+</footer>
+
+<div class="thes" id="thes" hidden role="dialog" aria-label="Word alternatives"></div>
+
+<script src="config.js"></script>
+<script src="shared/text.js"></script>
+<script src="site.js"></script>
+<script src="demo.js"></script>
+<script src="shared/thesaurus.js"></script>
+</body>
+</html>
