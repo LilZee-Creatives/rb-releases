@@ -1,0 +1,2 @@
+Spelling dictionary: SymSpell frequency_dictionary_en_82_765 (MIT License, Wolf Garbe).
+https://github.com/wolfgarbe/SymSpell

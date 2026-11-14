@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ribbon — offline AI writing app for novelists</title>
+  <meta name="description" content="Ribbon is a lightweight typewriter editor for novelists with 100% offline AI. It fixes typos and wrong words as you write, suggests better lines, and never sends your manuscript anywhere. Mac and Windows.">
+  <meta property="og:title" content="Ribbon — a typewriter editor for novelists">
+  <meta property="og:description" content="The writing app with AI that never leaves your computer. Lightweight, made for writers. Mac and Windows.">
+  <meta property="og:image" content="assets/og.png">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="shared/app-replica.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-row">
+    <a class="brand" href="./"><img src="assets/icon.png" alt="" width="28" height="28">Ribbon</a>
+    <nav class="nav" aria-label="Site">
+      <a href="#why">Offline AI</a>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="releases.html">Release log</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-ink btn-sm" id="topDownload" href="#download">Download</a>
+  </div>
+</header>
+
+<main>
+  <!-- Hero: a replay of the real app is the centrepiece -->
+  <section class="hero">
+    <div class="wrap hero-copy">
+      <ul class="badges" aria-label="Highlights">
+        <li><span class="b-ico" aria-hidden="true">●</span>100% offline AI</li>
+        <li><span class="b-ico" aria-hidden="true">◆</span><span data-app-size>Lightweight</span></li>
+        <li><span class="b-ico" aria-hidden="true">✎</span>Made for writers</li>
+      </ul>
+      <h1>The writing app with <span class="ink">AI that never leaves your computer.</span></h1>
+      <p class="lede">Ribbon is a quiet typewriter editor for novelists. Press Enter and its offline AI fixes typos, punctuation and wrong words, suggests better lines, and keeps the book yours. No cloud, no account, no subscription.</p>
+    </div>
+
+    <div class="wrap dl" id="download">
+      <div class="dl-row">
+        <a class="btn btn-ink btn-lg dl-btn" id="dlMac" href="releases.html" data-os="mac">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.3.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.8-1.1-2.8-4.1zM14 5.1c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg>
+          <span><b>Download for Mac</b><small id="dlMacSub">Apple Silicon · macOS 11+</small></span>
+        </a>
+        <a class="btn btn-ink btn-lg dl-btn" id="dlWin" href="releases.html" data-os="windows">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M2 4.3 10 3.2v7.7H2zM11 3.1 22 1.5v9.4H11zM2 12h8v7.8l-8-1.1zM11 12h11v9.5l-11-1.6z"/></svg>
+          <span><b>Download for Windows</b><small id="dlWinSub">Windows 10 and 11 · 64-bit</small></span>
+        </a>
+      </div>
+      <p class="dl-meta">
+        <span id="dlVersion">Free to try · 3 pages included</span>
+        <span class="sep">·</span>
+        <a href="#" id="dlIntel" data-os="mac-intel">Intel Mac?</a>
+        <span class="sep">·</span>
+        <a href="releases.html">All versions</a>
+      </p>
+    </div>
+
+    <div class="wrap stage-wrap">
+      <div class="stage" id="stage">
+        <div class="frame" id="frame" aria-label="Ribbon in action: a short replay" role="img">
+          <div class="rbx" id="rbx">
+            <div class="r-title"><span class="r-lights" aria-hidden="true"><i></i><i></i><i></i></span><span>The Lighthouse at Gullhaven — Ribbon</span></div>
+            <div class="app">
+              <header class="bar">
+                <span class="brand">Ribbon</span>
+                <div class="menuwrap"><button class="tb" type="button" tabindex="-1">File</button></div>
+                <div class="fmt">
+                  <button class="tb f-b" type="button" tabindex="-1">B</button>
+                  <button class="tb f-i" type="button" tabindex="-1">I</button>
+                  <button class="tb f-u" type="button" tabindex="-1">U</button>
+                  <span class="sep"></span>
+                  <button class="tb f-h" type="button" tabindex="-1">H</button>
+                  <button class="tb" type="button" tabindex="-1"><svg width="16" height="14" viewBox="0 0 16 14" aria-hidden="true"><path d="M1 2h14M4 7h8M2 12h12" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></button>
+                  <button class="tb f-s" type="button" tabindex="-1">* * *</button>
+                </div>
+                <span class="spacer"></span>
+                <span class="r-offline" id="rOffline"><svg width="15" height="12" viewBox="0 0 24 20" aria-hidden="true"><path d="M2 7a15 15 0 0 1 20 0M5.5 10.5a10 10 0 0 1 13 0M9 14a5 5 0 0 1 6 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="17.5" r="1.6" fill="currentColor"/><path d="M3 1l18 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>Wi-Fi off</span>
+                <span class="status" id="rStatus">Saved</span>
+                <span class="pages" id="rPages">Page <b>2</b> · 412 words</span>
+                <button class="chip" id="rChip" data-live="1" type="button" tabindex="-1"><span class="dot"></span><span class="nm" id="rModel">Qwen 2.5 · 1.5B</span></button>
+                <button class="scorechip" id="rScoreChip" data-state="good" type="button" tabindex="-1">AI <b id="rScoreChipNum">10.0</b><span class="of">/10</span></button>
+              </header>
+              <div class="main">
+                <main class="desk" id="rDesk">
+                  <div class="page">
+                    <div class="doctitle">The Lighthouse at Gullhaven</div>
+                    <div class="dateline">The Lighthouse at Gullhaven.ribbon</div>
+                    <div id="editor"></div>
+                  </div>
+                </main>
+                <aside class="margin">
+                  <section class="scorebox">
+                    <div class="label"><span>AI score</span></div>
+                    <div class="big"><span id="rScore">10.0</span><span class="of"> /10</span></div>
+                    <span class="pill" id="rPill" data-state="good">Healthy · all yours</span>
+                    <div class="meter"><div class="meter-fill" id="rMeter"></div><div class="line8"></div></div>
+                    <div class="scale"><span class="s0">0</span><span class="s8">8 healthy</span><span class="s10">10</span></div>
+                    <p class="stat" id="rStat"></p>
+                  </section>
+                  <section>
+                    <div class="label"><span>Alternate lines</span><span id="rSugCount"></span></div>
+                    <div class="cards" id="rCards"></div>
+                  </section>
+                </aside>
+              </div>
+            </div>
+
+            <div class="overlay" id="rLib" hidden>
+              <div class="sheet wide">
+                <div class="sheet-head"><h2>Models</h2><button class="ghost" type="button" tabindex="-1">Close</button></div>
+                <p class="lede">Pick a model and Ribbon loads it on this computer. Nothing you write leaves your machine. Built-in rules fix typos even with no model.</p>
+                <div class="sec">
+                  <div class="label"><span>On this computer</span></div>
+                  <div class="tiles">
+                    <div class="tile"><span class="glyph">Aa</span><b>Built-in rules</b><small>No model. Instant spelling, punctuation and wrong-word fixes.</small></div>
+                    <div class="tile" id="rQwen"><span class="glyph">QW</span><b>Qwen 2.5 · 1.5B</b><small>1.1 GB · downloaded</small><span class="badge" id="rQwenBadge"></span></div>
+                    <div class="tile add"><span class="glyph">+</span><b>Add from disk…</b><small>Any .gguf model file</small></div>
+                  </div>
+                </div>
+                <div class="sec">
+                  <div class="label"><span>Get a model</span></div>
+                  <div class="tiles">
+                    <div class="tile"><span class="glyph">LL</span><b>Llama 3.2 · 3B</b><small>Slower, better alternate lines. Best with 16 GB of memory. 2.0 GB.</small><span class="badge" style="color:var(--accent)">Download</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="thes" id="rThes" hidden></div>
+            <div class="toast" id="rToast"><span id="rToastMsg"></span></div>
+            <div class="r-key" id="rKey">Enter ⏎</div>
+            <div class="r-pointer" id="rPointer"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2 L4 20 L9 15 L12.5 22 L15.5 20.6 L12 13.8 L19 13.8 Z" fill="#1E2027" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+          </div>
+        </div>
+
+        <div class="caption" aria-live="polite">
+          <ol class="steps-bar" id="stepsBar" aria-hidden="true"><li></li><li></li><li></li><li></li><li></li></ol>
+          <p class="cap-text"><span class="cap-step" id="capStep">1 / 5</span> <span id="capText">Write. Don’t stop for typos.</span></p>
+          <button class="cap-btn" id="capPause" type="button" aria-pressed="false">Pause</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Ribbon: offline AI, lightweight, made for writers -->
+  <section class="sec sec-alt" id="why">
+    <div class="wrap">
+      <h2>AI that works for you, <span class="ink">not on you.</span></h2>
+      <div class="pillars">
+        <article class="pillar">
+          <div class="p-art" aria-hidden="true">
+            <svg viewBox="0 0 120 70" width="120" height="70"><rect x="14" y="10" width="72" height="46" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><path d="M4 62h92" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M34 33h32M34 24h20M34 42h26" stroke="url(#pg)" stroke-width="3" stroke-linecap="round"/><g transform="translate(92 6)"><path d="M2 9a14 14 0 0 1 20 0M6 13a8 8 0 0 1 12 0" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".5"/><circle cx="12" cy="17" r="2" fill="currentColor" opacity=".5"/><path d="M2 2l20 20" stroke="var(--bad)" stroke-width="2.8" stroke-linecap="round"/></g><defs><linearGradient id="pg"><stop offset="0" stop-color="var(--wave-a)"/><stop offset="1" stop-color="var(--wave-b)"/></linearGradient></defs></svg>
+          </div>
+          <h3>100% offline AI</h3>
+          <p>The AI model runs on your own Mac or PC. Your manuscript is never uploaded, never stored on a server, never used to train anything. It works on a plane, in a cabin, with Wi-Fi off.</p>
+        </article>
+        <article class="pillar">
+          <div class="p-art p-size" aria-hidden="true"><b data-app-mb>25</b><span>MB</span></div>
+          <h3>Lightweight</h3>
+          <p>A <span data-app-size-lower>small</span> download that opens in a second. Pick a model once (about 1 GB, one click) and it runs smoothly on an ordinary 8 GB laptop. No model? The built-in rules still fix your typing.</p>
+        </article>
+        <article class="pillar">
+          <div class="p-art p-type" aria-hidden="true">Aa</div>
+          <h3>Made for writers</h3>
+          <p>A typewriter page, a quiet margin, manuscript-format PDF export. The AI score shows how much of the book is still yours, so the help never takes over the writing.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="sec" id="features">
+    <div class="wrap">
+      <h2>What Ribbon does</h2>
+      <p class="sec-lede">You write. The offline AI tidies up behind you.</p>
+      <div class="feats">
+        <article class="feat">
+          <h3>Polish on Enter</h3>
+          <p>Finish a paragraph and press Enter. A wave runs through it and the AI fixes spelling, typos, punctuation and wrong words. Names stay exactly as you wrote them, and Undo puts everything back.</p>
+          <div class="eg"><s>ill go up teh stairs</s><span class="to">→</span><span>I’ll go up the stairs.</span></div>
+        </article>
+        <article class="feat">
+          <h3>Alternate lines</h3>
+          <p>When a sentence could be stronger, the AI leaves a suggestion in the margin. OK swaps it in. Skip keeps yours.</p>
+          <div class="eg"><s>She was very tired</s><span class="to">→</span><span>She was exhausted</span></div>
+        </article>
+        <article class="feat">
+          <h3>AI score</h3>
+          <p>Starts at 10 out of 10. Every suggested line you accept lowers it a little. Stay at 8 or above and the book is still yours. Typo fixes don’t count.</p>
+          <div class="eg eg-meter"><span class="m"><i style="width:86%"></i><em></em></span><b>8.6</b><small>healthy</small></div>
+        </article>
+        <article class="feat">
+          <h3>Word alternatives</h3>
+          <p>Double-click or right-click any word to see other words for it. Click one to swap it in. It keeps the tense: walked becomes strolled.</p>
+          <div class="eg"><span class="w">walked</span><span class="to">→</span><span>marched · paced · strolled</span></div>
+        </article>
+        <article class="feat">
+          <h3>Pick your AI like a photo</h3>
+          <p>One click downloads a model made for laptops. Already have one? Choose any .gguf file, or use a model from Ollama or LM Studio.</p>
+          <div class="eg"><span class="tag">Qwen 2.5 · 1.5B</span><span class="tag">Llama 3.2 · 3B</span><span class="tag">your .gguf</span></div>
+        </article>
+        <article class="feat">
+          <h3>Manuscript-ready export</h3>
+          <p>A PDF in standard manuscript format, the way agents and editors expect it: Courier 12 pt, double-spaced, one-inch margins. Or plain text.</p>
+          <div class="eg"><span class="tag">PDF · Letter or A4</span><span class="tag">.txt</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="sec sec-alt" id="pricing">
+    <div class="wrap">
+      <h2>Pricing</h2>
+      <p class="sec-lede">Try every feature for free. Pay once when you need more pages.</p>
+      <div class="plans">
+        <div class="plan">
+          <div class="plan-name">Free</div>
+          <div class="plan-price">$0</div>
+          <ul>
+            <li>Every feature</li>
+            <li>Up to 3 pages (750 words)</li>
+            <li>No account needed</li>
+          </ul>
+          <a class="btn btn-line" href="#download">Download</a>
+        </div>
+        <div class="plan plan-pro">
+          <div class="plan-name">Full access</div>
+          <div class="plan-price"><span class="price" data-price>$10</span> <small>once</small></div>
+          <ul>
+            <li><b>All features unlocked</b></li>
+            <li>Unlimited pages</li>
+            <li>Free updates</li>
+            <li>Use it on up to 2 computers</li>
+          </ul>
+          <a class="btn btn-ink" id="buyBtn" href="#" data-track="buy">Buy now · <span data-price>$10</span></a>
+          <p class="plan-note">Secure checkout by Dodo Payments.</p>
+        </div>
+      </div>
+      <ol class="how">
+        <li><b>Pay</b> once with card or local payment methods.</li>
+        <li><b>Get your key</b> by email right away.</li>
+        <li><b>Paste it</b> in Ribbon: File → Unlock full access.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec" id="faq">
+    <div class="wrap narrow">
+      <h2>Questions</h2>
+      <details><summary>Does my writing go to the cloud?</summary><p>No. Ribbon runs the AI model on your own computer. The only time Ribbon goes online is to download a model you choose, or to check your license key once.</p></details>
+      <details><summary>Do I need a powerful computer?</summary><p>No. The built-in rules work on anything. The small one-click model runs well on a laptop with 8 GB of memory; the larger one likes 16 GB.</p></details>
+      <details><summary>What happens after 3 pages on the free version?</summary><p>You can still read, edit and export those pages. To keep writing, unlock full access once for <span data-price>$10</span>.</p></details>
+      <details><summary>Can I move to a new computer?</summary><p>Yes. In Ribbon, open File → License → Release this computer, then paste your key on the new one. One key works on up to 2 computers.</p></details>
+      <details><summary>Does it need the internet?</summary><p>Only to download Ribbon, to download a model once, and to activate your key. After that, Ribbon and its AI work completely offline.</p></details>
+      <details><summary>Windows says “Windows protected your PC”.</summary><p>That’s normal for new apps from independent developers. Click <b>More info</b>, then <b>Run anyway</b>. You only do this once.</p></details>
+    </div>
+  </section>
+
+  <!-- Latest release teaser -->
+  <section class="sec sec-alt" id="latest">
+    <div class="wrap">
+      <div class="latest">
+        <div>
+          <div class="eyebrow">Latest release</div>
+          <div class="latest-title" id="latestTitle">Ribbon 1.0.0</div>
+          <div class="latest-date" id="latestDate"></div>
+        </div>
+        <ul class="latest-notes" id="latestNotes"></ul>
+        <a class="btn btn-line" href="releases.html">Read the release log →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="sec" id="contact">
+    <div class="wrap narrow">
+      <h2>Contact us</h2>
+      <p class="sec-lede">Questions, a lost key, or an idea for Ribbon. We answer every message.</p>
+      <form class="contact" id="contactForm" novalidate>
+        <div class="row2">
+          <label for="cName">Your name<input id="cName" name="name" autocomplete="name" required></label>
+          <label for="cEmail">Your email<input id="cEmail" name="email" type="email" autocomplete="email" required></label>
+        </div>
+        <label for="cTopic">Topic
+          <select id="cTopic" name="topic">
+            <option>Question</option><option>License or purchase</option><option>Bug report</option><option>Feature idea</option>
+          </select>
+        </label>
+        <label for="cMsg">Message<textarea id="cMsg" name="message" rows="5" required></textarea></label>
+        <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="contact-foot">
+          <button class="btn btn-ink" type="submit" id="cSend">Send message</button>
+          <p class="cmsg" id="cStatus" role="status"></p>
+        </div>
+        <p class="cmail">Or email <span class="mail" id="mailText"></span> <button type="button" class="copy" id="copyMail">Copy</button></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-row">
+    <span>© <span id="year">2026</span> Ribbon · Made with ❤️ by LilZee Studios</span>
+    <span class="foot-links"><a href="releases.html">Release log</a><a href="#contact">Contact</a><a href="#pricing">Pricing</a></span>
+    <span class="foot-small">Anonymous, cookie-free visit counts. No tracking of what you write — ever.</span>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="site.js"></script>
+<script src="demo.js"></script>
+</body>
+</html>

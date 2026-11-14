@@ -1,0 +1,174 @@
+/* Generated from src/styles.css by scripts/site.mjs. Don't edit. */
+.rbx{
+  --paper: #F4F4F0; --sheet: #FBFBF9; --ink: #1E2027; --muted: #6A6D77; --rule: #DFDFD8; --panel: #ECECE6;
+  --accent: #3A4CB3; --wave-a: #5A6BFF; --wave-b: #A16AFF; --fixmark: rgba(90,107,255,.22);
+  --hl-ai: rgba(161,106,255,.20); --hl-sugg: rgba(90,107,255,.16);
+  --good: #2D7A4C; --warn: #A06A10; --bad: #AE3636; --scrim: rgba(20,21,26,.45); --shadow: rgba(20,21,26,.14);
+  --font-type: "Courier Prime", "Courier New", Courier, monospace;
+  --font-display: "Special Elite", "Courier Prime", "Courier New", monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {.rbx{
+    --paper: #141519; --sheet: #1B1C21; --ink: #E5E3DD; --muted: #8F919A; --rule: #2B2D33; --panel: #18191D;
+    --accent: #93A0FF; --wave-a: #7E8CFF; --wave-b: #C29BFF; --fixmark: rgba(126,140,255,.28);
+    --hl-ai: rgba(194,155,255,.22); --hl-sugg: rgba(126,140,255,.20);
+    --good: #5EC08B; --warn: #E2A94C; --bad: #E36B6B; --scrim: rgba(0,0,0,.6); --shadow: rgba(0,0,0,.45);
+    color-scheme: dark;
+  }}
+.rbx, .rbx *{ box-sizing: border-box }
+.rbx, .rbx{ height: 100%; margin: 0 }
+.rbx{ background: var(--paper); color: var(--ink); font-family: var(--font-type); font-size: 15px; -webkit-font-smoothing: antialiased; overflow: hidden }
+.rbx button, .rbx input{ font: inherit; color: inherit }
+.rbx :focus-visible{ outline: 2px solid var(--accent); outline-offset: 2px }
+.rbx [hidden]{ display: none !important }
+.rbx kbd{ font-family: var(--font-type); border: 1px solid var(--rule); border-bottom-width: 2px; border-radius: 3px; padding: 0 5px; background: var(--sheet); color: var(--ink); font-size: .9em }
+.rbx .app{ display: grid; grid-template-rows: auto auto minmax(0, 1fr); height: 100% }
+.rbx .bar{ display: flex; align-items: center; gap: 8px; padding: 8px 14px; border-bottom: 1px solid var(--rule); background: var(--paper); flex-wrap: wrap; -webkit-user-select: none; user-select: none }
+.rbx .brand{ font-family: var(--font-display); font-size: 20px; margin-right: 6px }
+.rbx .tb{ background: transparent; border: 1px solid transparent; border-radius: 6px; padding: 5px 10px; cursor: pointer; min-width: 32px; display: inline-grid; place-items: center; font-size: 14px; color: var(--ink) }
+.rbx .tb:hover{ background: var(--panel); border-color: var(--rule) }
+.rbx .tb[aria-pressed="true"]{ background: var(--ink); color: var(--paper) }
+.rbx .f-b{ font-weight: 700 }
+.rbx .f-i{ font-style: italic }
+.rbx .f-u{ text-decoration: underline }
+.rbx .f-h{ font-family: var(--font-display) }
+.rbx .f-s{ font-size: 12px; letter-spacing: .05em }
+.rbx .fmt{ display: flex; align-items: center; gap: 2px; padding-left: 8px; border-left: 1px solid var(--rule) }
+.rbx .sep{ width: 1px; height: 18px; background: var(--rule); margin: 0 6px }
+.rbx .spacer{ flex: 1 }
+.rbx .status{ color: var(--muted); font-size: 12px; min-width: 52px; text-align: right }
+.rbx .pages{ color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; white-space: nowrap }
+.rbx .pages b{ color: var(--ink) }
+.rbx .chip, .rbx .scorechip{ display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--rule); background: var(--sheet); border-radius: 999px; padding: 5px 12px; cursor: pointer; font-size: 13px; max-width: 260px }
+.rbx .chip .nm{ overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
+.rbx .dot{ width: 8px; height: 8px; border-radius: 50%; background: var(--muted); flex: none }
+.rbx .chip[data-live="1"] .dot{ background: var(--good) }
+.rbx .chip[data-live="busy"] .dot{ background: var(--warn); animation: pulse 1s ease-in-out infinite alternate }
+@keyframes pulse{ from { opacity: .3 } to { opacity: 1 } }
+.rbx .scorechip{ font-variant-numeric: tabular-nums; gap: 4px }
+.rbx .scorechip .of{ color: var(--muted); font-size: 11px }
+.rbx [data-state="good"]{ color: var(--good) }
+.rbx [data-state="warn"]{ color: var(--warn) }
+.rbx [data-state="bad"]{ color: var(--bad) }
+.rbx .unlock{ background: var(--ink); color: var(--paper); border: 0; border-radius: 999px; padding: 6px 14px; cursor: pointer; font-weight: 700; font-size: 13px }
+.rbx .menuwrap{ position: relative }
+.rbx .menu{ position: absolute; top: calc(100% + 6px); left: 0; z-index: 30; min-width: 250px; background: var(--sheet); border: 1px solid var(--rule); border-radius: 8px; padding: 6px; box-shadow: 0 10px 30px var(--shadow); display: flex; flex-direction: column }
+.rbx .menu button{ display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; background: none; border: 0; border-radius: 5px; padding: 8px 10px; cursor: pointer; font-size: 14px }
+.rbx .menu button:hover, .rbx .menu button:focus-visible{ background: var(--panel) }
+.rbx .menu hr{ border: 0; border-top: 1px solid var(--rule); margin: 4px 2px; width: auto }
+.rbx .mk{ color: var(--muted); border: 0; background: none; padding: 0 }
+.rbx .trialbar{ display: flex; gap: 12px; align-items: center; justify-content: center; flex-wrap: wrap; padding: 7px 14px; background: var(--panel); border-bottom: 1px solid var(--rule); font-size: 13px; color: var(--muted) }
+.rbx .trialbar[data-full="1"]{ color: var(--ink) }
+.rbx .linkbtn{ background: none; border: 0; padding: 0; color: var(--accent); text-decoration: underline; cursor: pointer; font-size: inherit }
+.rbx .main{ display: grid; grid-template-columns: minmax(0, 1fr) 340px; min-height: 0 }
+.rbx .desk{ overflow-y: auto; padding: 56px 24px 160px }
+.rbx .page{ max-width: 66ch; margin: 0 auto }
+.rbx .doctitle{ font-family: var(--font-display); font-size: 30px; border: 0; border-bottom: 1px dashed transparent; background: transparent; width: 100%; padding: 0 0 4px; outline: none }
+.rbx .doctitle:focus{ border-bottom-color: var(--rule) }
+.rbx .dateline{ color: var(--muted); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; margin: 6px 0 40px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
+.rbx #editor{ font-size: 19px; line-height: 1.8; outline: none; caret-color: var(--accent); min-height: 50vh; overflow-wrap: anywhere }
+.rbx #editor[contenteditable="false"]{ opacity: .8 }
+.rbx #editor p{ margin: 0 0 1.15em }
+.rbx #editor p[data-kind="heading"]{ font-family: var(--font-display); font-size: 1.5em; line-height: 1.3; margin: 1.6em 0 .9em }
+.rbx #editor p[data-kind="scene"]{ text-align: center; letter-spacing: .6em; color: var(--muted); margin: 1.4em 0; -webkit-user-select: none; user-select: none }
+.rbx #editor p[data-align="center"]{ text-align: center }
+.rbx #editor p.wave, .rbx #editor p.thinking{
+  background-image: linear-gradient(100deg, var(--ink) 0%, var(--ink) 38%, var(--wave-a) 46%, var(--wave-b) 53%, var(--ink) 62%, var(--ink) 100%);
+  background-size: 260% 100%; background-position: 100% 0; -webkit-background-clip: text; background-clip: text; color: transparent }
+.rbx #editor p.wave{ animation: wave 1.15s cubic-bezier(.45,.05,.3,1) forwards }
+.rbx #editor p.thinking{ animation: wave 1.4s ease-in-out infinite alternate }
+@keyframes wave{ from { background-position: 100% 0 } to { background-position: 0 0 } }
+.rbx #editor span.fx{ border-radius: 2px; animation: fxfade 2.8s ease-out forwards }
+@keyframes fxfade{ 0%, 45% { background: var(--fixmark) } 100% { background: transparent } }
+.rbx #editor p.accepted{ animation: acc 1.6s ease-out }
+@keyframes acc{ 0% { background: var(--hl-ai) } 100% { background: transparent } }
+.rbx .foot{ margin-top: 44px; color: var(--muted); font-size: 13px; border-top: 1px dashed var(--rule); padding-top: 14px; line-height: 1.6 }
+.rbx .margin{ border-left: 1px solid var(--rule); background: var(--panel); overflow-y: auto; padding: 24px 20px; display: flex; flex-direction: column; gap: 30px }
+.rbx .label{ font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); display: flex; justify-content: space-between; align-items: center; gap: 8px }
+.rbx .big{ font-family: var(--font-display); font-size: 54px; line-height: 1; margin-top: 12px; font-variant-numeric: tabular-nums }
+.rbx .big .of{ font-size: 20px; color: var(--muted) }
+.rbx .pill{ display: inline-block; margin-top: 10px; font-size: 12px; padding: 3px 10px; border-radius: 999px; border: 1px solid currentColor }
+.rbx .meter{ position: relative; height: 8px; background: var(--rule); border-radius: 4px; margin-top: 18px }
+.rbx .meter-fill{ height: 100%; width: 100%; border-radius: 4px; background: var(--good); transition: width .5s, background-color .5s }
+.rbx .line8{ position: absolute; left: 80%; top: -5px; bottom: -5px; width: 2px; background: var(--ink); opacity: .45 }
+.rbx .scale{ position: relative; height: 16px; font-size: 11px; color: var(--muted); margin-top: 6px; font-variant-numeric: tabular-nums }
+.rbx .scale span{ position: absolute; top: 0; white-space: nowrap }
+.rbx .scale .s0{ left: 0 }
+.rbx .scale .s8{ left: 80%; transform: translateX(-50%) }
+.rbx .scale .s10{ right: 0 }
+.rbx .stat{ font-size: 13px; color: var(--muted); line-height: 1.55; margin: 12px 0 0 }
+.rbx .toggle{ display: flex; gap: 8px; align-items: center; font-size: 13px; margin-top: 12px; cursor: pointer }
+.rbx .cards{ display: flex; flex-direction: column; gap: 12px; margin-top: 14px }
+.rbx .card{ background: var(--sheet); border: 1px solid var(--rule); border-radius: 6px; padding: 14px; display: flex; flex-direction: column; gap: 10px; animation: cardIn .35s ease-out }
+@keyframes cardIn{ from { opacity: 0; transform: translateY(6px) } to { opacity: 1; transform: none } }
+.rbx .card .why{ font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent) }
+.rbx .card .was{ font-size: 13.5px; color: var(--muted); text-decoration: line-through; line-height: 1.5; cursor: pointer }
+.rbx .card .now{ font-size: 15px; line-height: 1.55 }
+.rbx .acts{ display: flex; gap: 8px }
+.rbx .ok, .rbx .primary{ background: var(--ink); color: var(--paper); border: 0; border-radius: 5px; padding: 8px 18px; cursor: pointer; font-weight: 700 }
+.rbx .primary:disabled{ opacity: .5; cursor: default }
+.rbx .skip, .rbx .ghost{ background: transparent; border: 1px solid var(--rule); border-radius: 5px; padding: 7px 12px; cursor: pointer; color: var(--muted) }
+.rbx .empty{ font-size: 13.5px; color: var(--muted); line-height: 1.6; border: 1px dashed var(--rule); border-radius: 6px; padding: 16px; margin-top: 14px }
+.rbx .overlay{ position: absolute; inset: 0; background: var(--scrim); display: flex; align-items: center; justify-content: center; z-index: 40; padding: 24px }
+.rbx .sheet{ background: var(--paper); width: min(560px, 100%); max-height: 90%; overflow-y: auto; border-radius: 12px; padding: 24px; border: 1px solid var(--rule); box-shadow: 0 20px 60px var(--shadow) }
+.rbx .sheet.wide{ width: min(780px, 100%) }
+.rbx .sheet.narrow{ width: min(440px, 100%) }
+.rbx .sheet-head{ display: flex; justify-content: space-between; align-items: center; gap: 12px }
+.rbx .sheet h2{ font-family: var(--font-display); font-weight: 400; font-size: 24px; margin: 0 }
+.rbx .lede{ color: var(--muted); font-size: 14px; line-height: 1.55; margin: 8px 0 18px }
+.rbx .sec{ margin-top: 22px; display: flex; flex-direction: column; gap: 10px }
+.rbx .tiles{ display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px }
+.rbx .tile{ position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; text-align: left; background: var(--sheet); border: 1px solid var(--rule); border-radius: 8px; padding: 14px; cursor: pointer; min-width: 0 }
+.rbx .tile:hover{ border-color: var(--muted) }
+.rbx .tile b{ font-size: 14.5px; overflow-wrap: anywhere }
+.rbx .tile small{ color: var(--muted); font-size: 12px; line-height: 1.45; overflow-wrap: anywhere }
+.rbx .tile .glyph{ font-family: var(--font-display); font-size: 15px; width: 44px; height: 44px; border: 1px solid var(--rule); border-radius: 6px; display: grid; place-items: center; margin-bottom: 4px; background: var(--paper) }
+.rbx .tile[aria-pressed="true"]{ border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) }
+.rbx .tile .badge{ font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--good) }
+.rbx .tile .x{ position: absolute; top: 6px; right: 6px; background: none; border: 0; color: var(--muted); cursor: pointer; font-size: 16px; padding: 2px 7px; border-radius: 4px }
+.rbx .tile .x:hover{ background: var(--panel); color: var(--ink) }
+.rbx .tile.add{ border-style: dashed; justify-content: center }
+.rbx .bar2{ width: 100%; height: 6px; background: var(--rule); border-radius: 3px; overflow: hidden }
+.rbx .bar2 > i{ display: block; height: 100%; width: 0; background: var(--accent); transition: width .3s }
+.rbx .sub{ margin-top: 22px; display: flex; flex-direction: column; gap: 10px }
+.rbx .sub label{ font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted) }
+.rbx .row{ display: flex; gap: 8px; flex-wrap: wrap; align-items: center }
+.rbx .row.end{ justify-content: flex-end; margin-top: 18px }
+.rbx .row input{ flex: 1; min-width: 0; border: 1px solid var(--rule); background: var(--sheet); border-radius: 5px; padding: 8px 10px; font-size: 13px }
+.rbx .msg{ font-size: 13px; line-height: 1.55; color: var(--muted); margin: 0; white-space: pre-wrap }
+.rbx .msg.err{ color: var(--bad) }
+.rbx .price{ display: flex; align-items: baseline; gap: 12px; margin: 4px 0 18px; color: var(--muted); font-size: 13px }
+.rbx .price .amt{ font-family: var(--font-display); font-size: 44px; color: var(--ink) }
+.rbx .kv{ display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; font-size: 14px; margin: 0 }
+.rbx .kv dt{ color: var(--muted) }
+.rbx .kv dd{ margin: 0; overflow-wrap: anywhere }
+.rbx .opts{ display: flex; gap: 18px; flex-wrap: wrap }
+.rbx fieldset{ border: 1px solid var(--rule); border-radius: 8px; padding: 10px 14px 12px; display: flex; flex-direction: column; gap: 8px; flex: 1; min-width: 200px; margin: 0 }
+.rbx legend{ font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding: 0 4px }
+.rbx fieldset label{ display: flex; gap: 8px; align-items: center; font-size: 14px; cursor: pointer }
+.rbx .toast{ position: absolute; left: 50%; bottom: 22px; transform: translate(-50%, 16px); opacity: 0; pointer-events: none; background: var(--ink); color: var(--paper); padding: 9px 10px 9px 16px; border-radius: 6px; font-size: 13.5px; transition: opacity .25s, transform .25s; z-index: 50; max-width: calc(100% - 40px); display: flex; gap: 14px; align-items: center }
+.rbx .toast.show{ opacity: 1; transform: translate(-50%, 0); pointer-events: auto }
+.rbx .toastbtn{ background: transparent; color: var(--paper); border: 1px solid currentColor; border-radius: 4px; padding: 3px 10px; cursor: pointer; font-size: 12.5px; opacity: .9 }
+@media (prefers-reduced-motion: reduce) {.rbx #editor p.wave, .rbx #editor p.thinking{ animation: none; background: none; color: inherit }
+.rbx .card, .rbx #editor p.accepted, .rbx .chip[data-live="busy"] .dot{ animation: none }
+.rbx .toast, .rbx .meter-fill, .rbx .bar2 > i{ transition: none }}
+/* Generated from src/styles.css by scripts/site.mjs. Don't edit. */
+.rbx .thes{ position: absolute; z-index: 35; width: min(380px, calc(100vw - 24px)); max-height: 60vh; overflow-y: auto;
+  background: var(--sheet); border: 1px solid var(--rule); border-radius: 10px; box-shadow: 0 12px 32px var(--shadow);
+  padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 12px; animation: thesIn .14s ease-out }
+@keyframes thesIn{ from { opacity: 0; transform: translateY(-4px) } to { opacity: 1; transform: none } }
+.rbx .thes-head{ display: flex; justify-content: space-between; align-items: baseline; gap: 12px }
+.rbx .thes-head b{ font-family: var(--font-display); font-weight: 400; font-size: 18px }
+.rbx .thes-head span{ font-size: 11px; color: var(--muted) }
+.rbx .thes-body{ display: flex; flex-direction: column; gap: 12px }
+.rbx .thes-group{ display: flex; flex-direction: column; gap: 6px }
+.rbx .thes-label{ font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted) }
+.rbx .thes-model{ border-top: 1px dashed var(--rule); padding-top: 12px }
+.rbx .thes-model .thes-label{ color: var(--accent) }
+.rbx .thes-row{ display: flex; flex-wrap: wrap; gap: 6px }
+.rbx .thes-chip{ background: var(--paper); border: 1px solid var(--rule); border-radius: 999px; padding: 4px 11px; cursor: pointer; font-size: 14px; color: var(--ink) }
+.rbx .thes-chip:hover, .rbx .thes-chip:focus-visible{ background: var(--ink); color: var(--paper); border-color: var(--ink) }
+.rbx .thes-model .thes-chip{ border-color: var(--accent) }
+.rbx .thes-wait, .rbx .thes-empty{ font-size: 13px; color: var(--muted); margin: 0 }
+.rbx .thes-wait{ animation: pulse 1s ease-in-out infinite alternate }
+@media (prefers-reduced-motion: reduce) {.rbx .thes, .rbx .thes-wait{ animation: none }}

@@ -1,0 +1,52 @@
+{
+  "repo": "LilZee-Creatives/rb-releases",
+  "updated": "2026-11-14T14:33:29.840Z",
+  "releases": [
+    {
+      "tag": "v1.0.0",
+      "name": "Ribbon 1.0.0",
+      "date": "2026-11-14T11:10:36Z",
+      "body": "The first release of Ribbon.\n\n### New\n- **Polish on Enter**: spelling, typos, punctuation and wrong words (ill → I'll) fixed as you finish each paragraph\n- **Alternate lines** in the margin, with OK and Skip\n- **AI score** that keeps track of how much of the book is yours\n- **Word alternatives**: double-click or right-click any word\n- **Local AI**: one-click model downloads, or bring any `.gguf` file\n- Manuscript-format **PDF** and plain-text export\n- Bold, italic, underline, chapter headings and scene breaks\n",
+      "url": "https://github.com/LilZee-Creatives/rb-releases/releases/tag/v1.0.0",
+      "prerelease": false,
+      "assets": [
+        {
+          "name": "Ribbon_1.0.0_aarch64.dmg",
+          "url": "https://github.com/LilZee-Creatives/rb-releases/releases/download/v1.0.0/Ribbon_1.0.0_aarch64.dmg",
+          "size": 9633331,
+          "downloads": 1
+        },
+        {
+          "name": "Ribbon_1.0.0_x64-setup.exe",
+          "url": "https://github.com/LilZee-Creatives/rb-releases/releases/download/v1.0.0/Ribbon_1.0.0_x64-setup.exe",
+          "size": 6555017,
+          "downloads": 1
+        },
+        {
+          "name": "Ribbon_1.0.0_x64.dmg",
+          "url": "https://github.com/LilZee-Creatives/rb-releases/releases/download/v1.0.0/Ribbon_1.0.0_x64.dmg",
+          "size": 9642852,
+          "downloads": 1
+        },
+        {
+          "name": "Ribbon_1.0.0_x64_en-US.msi",
+          "url": "https://github.com/LilZee-Creatives/rb-releases/releases/download/v1.0.0/Ribbon_1.0.0_x64_en-US.msi",
+          "size": 8503296,
+          "downloads": 1
+        },
+        {
+          "name": "Ribbon_aarch64.app.tar.gz",
+          "url": "https://github.com/LilZee-Creatives/rb-releases/releases/download/v1.0.0/Ribbon_aarch64.app.tar.gz",
+          "size": 9511644,
+          "downloads": 1
+        },
+        {
+          "name": "Ribbon_x64.app.tar.gz",
+          "url": "https://github.com/LilZee-Creatives/rb-releases/releases/download/v1.0.0/Ribbon_x64.app.tar.gz",
+          "size": 9531199,
+          "downloads": 1
+        }
+      ]
+    }
+  ]
+}
